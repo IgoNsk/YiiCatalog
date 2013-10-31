@@ -30,7 +30,7 @@ YiiCatalog
  
 
 ## Использование в публичной части проекта
-* Подключаем behavior к модели рубрики каталога
+* **Подключаем behavior к модели рубрики каталога**
 ```php
   public function behaviors()
   {
@@ -46,13 +46,14 @@ YiiCatalog
     );
   }
 ```
-* Получить список всех полей для рубрики
+* **Получить список всех полей для рубрики**
 ```php
 $rubrics = $model->catalogRubricFields;
 ```
-* Операции с полями рубрики
+* **Операции с полями рубрики**
+
+Добавление нового свойства
 ```php
-// Добавление нового свойства
 $prop = new CatalogProperty;
 $prop->attributes = array(
   "caption"=>"Тест",
@@ -60,20 +61,24 @@ $prop->attributes = array(
 );
 $model->addCatalogProperty($prop);
 $model->save();
+```
 
-// редактирование существующено свойства
+Редактирование существующено свойства
+```php
 $prop = CatalogProperty::model()->findByPk(5);
 $prop->attributes = array(
   "prev_id"=>null
 );
 $model->editCatalogProperty($prop);
 $model->save();
+```
 
-// удаление свойства
+Удаление свойства
+```php
 $model->deleteCatalogProperty(5);
 $model->save();
 ```
-* Подключаем behavior к модели товара каталога
+* **Подключаем behavior к модели товара каталога**
 ```php
   public function behaviors()
   {
