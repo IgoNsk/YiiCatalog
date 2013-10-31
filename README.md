@@ -45,6 +45,32 @@ YiiCatalog
       )
     );
   }
+* Получить список всех полей для рубрики
+```php
+$rubrics = $model->catalogRubricFields;
+```
+* Операции с полями рубрики
+```php
+// Добавление нового свойства
+$prop = new CatalogProperty;
+$prop->attributes = array(
+  "caption"=>"Тест",
+  "type_id"=>1
+);
+$model->addCatalogProperty($prop);
+$model->save();
+
+// редактирование существующено свойства
+$prop = CatalogProperty::model()->findByPk(5);
+$prop->attributes = array(
+  "prev_id"=>null
+);
+$model->editCatalogProperty($prop);
+$model->save();
+
+// удаление свойства
+$model->deleteCatalogProperty(5);
+$model->save();
 ```
 * Подключаем behavior к модели товара каталога
 ```php
