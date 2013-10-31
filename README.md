@@ -45,6 +45,7 @@ YiiCatalog
       )
     );
   }
+```
 * Получить список всех полей для рубрики
 ```php
 $rubrics = $model->catalogRubricFields;
