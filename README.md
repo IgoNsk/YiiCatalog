@@ -24,6 +24,8 @@ YiiCatalog
   'catalog'=>array(
   	'class'=>'application.modules.catalog.CatalogModule',
   ),
+)
+...
 ```
 * Подключить и использовать behavior's реализующие функционал, к моделям 
 рубрики и товара каталога, как указано ниже.
